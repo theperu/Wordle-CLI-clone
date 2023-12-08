@@ -1,0 +1,10 @@
+{
+  "server_hostname": "localhost",
+  "server_port": 5814,
+  "timeout": 2000,
+  "multicastAddress": "239.255.255.250",
+  "multicastPort": 58149,
+  "secretWordRate": 20,
+  "datafile": "data.json",
+  "wordfile": "words.txt"
+}
