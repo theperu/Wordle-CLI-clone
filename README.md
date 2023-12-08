@@ -1,5 +1,5 @@
-Progetto di Fine Corso A.A. 2022/23
-1. Descrizione del gioco
+# Progetto di Fine Corso A.A. 2022/23
+## 1. Descrizione del gioco
 Il progetto consiste nella implementazione di WORDLE, un gioco di parole web-based, divenuto virale alla fine del 2021. In questa sezione descriveremo le regole generali del gioco, in quella successiva le specifiche della versione di WORDLE da implementare.
 Il gioco consiste nel trovare una parola inglese formata da 5 lettere, impiegando un numero massimo di 6 tentativi. WORDLE dispone di un vocabolario di parole di 5 lettere, da cui estrae casualmente una parola SW (Secret Word), che gli utenti devono indovinare. Ogni giorno viene selezionata una nuova SW, che rimane invariata fino al giorno successivo e che viene proposta a tutti gli utenti che si collegano al sistema durante quel giorno. Quindi esiste una sola parola per ogni giorno e tutti gli utenti devono indovinarla, questo attribuisce al gioco un aspetto sociale. L’utente propone una parola GW (Guessed Word) e il sistema inizialmente verifica se la parola è presente nel vocabolario. In caso negativo avverte l’utente che deve immettere un’altra parola. In caso la parola sia presente, il sistema fornisce all’utente tre tipi d'indizi, per ogni lettera l di GW, il sistema indica:
 ● se l è stata indovinata e si trova nella posizione corretta rispetto a SW
@@ -14,7 +14,7 @@ L’utente, utilizzando questi indizi, immette un’altra parola. Il gioco termi
 ● guess distribution: la distribuzione di tentativi impiegati per arrivare alla soluzione del gioco, in ogni partita vinta dal giocatore.
 Infine, per incrementare l’aspetto social del gioco, WORDLE fornisce all’utente, a fine di ogni gioco, la possibilità di condividere i tentativi effettuati (sia che il gioco sia terminato con successo o meno), sulle più importanti social network. Per evitare spoiler, vengono condivisi solo i colori delle lettere proposte in ogni tentativo. Ad esempio, per l’esempio riportato in Fig.1, le informazioni che l’utente può condividere sono mostrate in Fig.2. Nell’intestazione è presente il numero del gioco (le parole proposte da WORDLE sono numerate progressivamente) e il numero di tentativi prima della fine del gioco.
 
-2. Funzionalità
+## 2. Funzionalità
 Si richiede d'implementare una versione semplificata di WORDLE, che conservi però la logica di base del gioco. In particolare, la fase di condivisione dei risultati non richiederà l’interazione con una social network, ma sarà realizzata mediante la definizione e l’uso di un gruppo multicast a cui partecipano tutti i giocatori registrati al gioco. Inoltre l’implementazione richiesta utilizzerà un vocabolario di parole di 10 lettere (che verrà fornito) e un numero di tentativi massimo pari a 12. Distingueremo in seguito l’insieme di funzionalità di base da quelle aggiuntive. L’insieme di funzionalità di base dovranno essere implementate sia dagli studenti del vecchio ordinamento che da quelli del nuovo ordinamento, quelle aggiuntive solo dagli studenti del vecchio ordinamento. Inoltre l’implementazione di alcune funzionalità di base sarà diversa per gli studenti del nuovo rispetto a quelli del vecchio ordinamento, come specificato nella sezione 2.1 e 2.2.
 2.1 Funzionalità di base (per gli studenti di entrambe gli ordinamenti)
 Il gioco deve essere implementato mediante due componenti principali, che interagiscono usando diversi protocolli e paradigmi di comunicazione di rete. Le componenti sono le seguenti:
@@ -38,7 +38,7 @@ Gli studenti del vecchio ordinamento dovranno implementare anche le seguenti fun
 ● WordleClient. il client deve
   o Essere avvertito ogni volta c’è un aggiornamento nelle prime tre posizioni della classifica. La classifica viene visualizzata on demand sul client mediante il messaggio showMeRanking()
 
-3. Specifiche per l’implementazione
+## 3. Specifiche per l’implementazione
 Nella realizzazione del progetto devono essere utilizzate molte delle tecnologie illustrate durante il corso. In particolare:
 ● L'utente interagisce con WORDLE mediante un client che utilizza un'interfaccia a linea di comando. E’ facoltativa l’implementazione di un'interfaccia grafica.
 ● Fase di registrazione
@@ -52,7 +52,7 @@ Nella realizzazione del progetto devono essere utilizzate molte delle tecnologie
 ● Il periodo di tempo che intercorre tra la pubblicazione di una parola e la pubblicazione della parola successiva è definito come parametro di configurazione. Si ricorda che un utente può partecipare a più giochi (secret words) durante la stessa sessione di login, ma una volta che ha tentato d'indovinare una secret word (con esito positivo o negativo), deve attendere l’estrazione della successiva secret word per giocare di nuovo.
 ● La visualizzazione dei suggerimenti del server sulla CLI può essere effettuata associando a ogni colore diverso una diversa lettera (esempio grigio:’X’, verde: ‘+’, giallo: ‘?’, si ricorda che il significato dei colori è quello mostrato in Fig.1 e Fig.2)
 
-4. Modalità di svolgimento e di consegna del progetto
+## 4. Modalità di svolgimento e di consegna del progetto
 Il progetto deve essere eseguito individualmente. Il materiale da consegnare comprende:
 ● Il codice dell'applicazione e di eventuali programmi utilizzati per il test delle sue funzionalità.
 ● la relazione in formato pdf.
